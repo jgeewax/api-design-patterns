@@ -16,7 +16,7 @@ function calculateChecksum(bytes: Buffer): number {
   // Start by converting the byte value in a Buffer to a BigInt.
   const intValue = bytes.readBigInt64BE(0);
   // Return the remainder after dividing by 37, converted to a Number value.
-  return Number(value % BigInt(37));
+  return Number(value % BigInt(37)).valueOf();
 }
 
 function getChecksumCharacter(checksumValue: number): string {
